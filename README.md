@@ -23,41 +23,6 @@ A responsive Todo Dashboard that fetches todos from JSONPlaceholder, with pagina
  => Project structure :
 
 ```
-
-## Setup & Running Locally
-
-### Prerequisites
-
-- Node.js 18+
-- npm (or yarn / pnpm / bun)
-
-### Install dependencies
-
-```bash
-cd todo-dashboard
-npm install
-```
-
-### Start the development server
-
-```bash
-npm run dev
-```
-
-Then open `http://localhost:3000` in your browser.
-
-### Build for production
-
-```bash
-npm run build
-npm start
-```
-
-### Lint
-
-```bash
-npm run lint
-```
 todo-dashboard/
 ├── app/
 │   ├── layout.js    
