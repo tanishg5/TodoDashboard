@@ -1,4 +1,4 @@
-# Todo Dashboard
+# Todo - Dashboard
 
 A responsive Todo Dashboard that fetches todos from JSONPlaceholder, with pagination, toggle completion, and local add-todo support.
 
