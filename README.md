@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Todo Dashboard
 
-## Getting Started
+**RoundTechSquare – Frontend Internship Assignment**
 
-First, run the development server:
+A responsive Todo Dashboard that fetches todos from JSONPlaceholder, with pagination, toggle completion, and local add-todo support.
+
+---
+
+## Tech Stack
+
+- **Next.js** (App Router)
+- **React**
+- **TanStack Query** (React Query) – data fetching, caching, loading/error states
+- **Tailwind CSS** – styling
+- **Axios** – HTTP client for API calls
+
+---
+
+## Functional Requirements (Implemented)
+
+| Requirement | Status |
+|------------|--------|
+| Fetch todos from `https://jsonplaceholder.typicode.com/todos?_page=<page>&_limit=<limit>` | ✅ |
+| Dynamic fetch by page with query key `['todos', page]` | ✅ |
+| Loading state | ✅ |
+| Error state | ✅ |
+| Pagination: 10 items per page, Previous/Next, current page display | ✅ |
+| Page changes trigger correct API call (TanStack Query) | ✅ |
+| Toggle completed status with immediate UI update | ✅ |
+| Add new todo (local only, appears on current page) | ✅ |
+
+---
+
+## UI & Structure
+
+- Clean, responsive layout (mobile-first)
+- Proper folder structure: `app/`, `components/`, `services/`, `lib/`
+- Separation of concerns: API in `services/`, data fetching in components, shared client in `lib/`
+
+---
+
+## Setup
+
+### Prerequisites
+
+- Node.js 18+
+- npm (or yarn / pnpm / bun)
+
+### Install and run
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+### Lint
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Submission
 
-## Deploy on Vercel
+- **GitHub repository:** _[Add your repo link here]_
+- **Deployed link:** _[Add your Vercel/Netlify link here]_
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project structure (relevant parts)
+
+```
+todo-dashboard/
+├── app/
+│   ├── layout.js       # Root layout, viewport, metadata
+│   ├── page.js         # Home page, page state, local todos
+│   ├── providers.js    # TanStack Query provider
+│   └── globals.css     # Global styles
+├── components/
+│   ├── AddTodo.js      # Add new todo (local)
+│   ├── TodoList.js     # Fetches list via useQuery, pagination
+│   ├── TodoItem.js     # Single todo + toggle completed
+│   └── Pagination.js   # Previous / Next, page number
+├── services/
+│   └── todoApi.js      # fetchTodos(page, limit) – API integration
+└── lib/
+    └── queryClient.js  # TanStack Query client
+```
+
+---
+
+## API
+
+- **Base URL:** `https://jsonplaceholder.typicode.com/todos`
+- **Pagination:** `?_page=<page>&_limit=<limit>` (e.g. `_page=1&_limit=10`)
+
+---
+
+_Assignment completed for RoundTechSquare Frontend Internship – Assignment Round._
