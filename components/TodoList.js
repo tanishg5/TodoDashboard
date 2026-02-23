@@ -4,6 +4,7 @@ import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import { fetchTodos } from "@/services/todoApi";
 import TodoItem from "./TodoItem";
 import Pagination from "./Pagination";
+import { useEffect } from "react";
 
 const LIMIT = 10;
 
@@ -18,6 +19,10 @@ export default function TodoList({ page, setPage, localTodos = [] }) {
     queryFn: () => fetchTodos(page, LIMIT),
     placeholderData: keepPreviousData,
   });
+  
+  useEffect(()=>{
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [page])
 
   if (isLoading) {
     return (
