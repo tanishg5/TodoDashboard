@@ -20,6 +20,27 @@ A responsive Todo Dashboard that fetches todos from JSONPlaceholder, with pagina
 
 - Clean, responsive layout (mobile-first)
 
+=> Setup & Running Locally
+
+### Prerequisites
+
+- Node.js 18+
+
+### Install dependencies
+
+```
+cd todo-dashboard
+npm install
+
+```
+then , 
+```
+npm run dev
+
+```
+
+Then open `http://localhost:3000` in your browser.
+
  => Project structure :
 
 ```
